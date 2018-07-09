@@ -17,5 +17,5 @@ comment on column st_category.status is 'Status: 1-Draft, 2-Enabled, 4-Disabled,
 comment on column st_category.name is 'Name';
 comment on column st_category.sn is 'Code or order number';
 
--- Set auto start ID=1000, means keep 1000 standby ids.
-select setval('st_category_id_seq', 1000, true);
+-- Keep ID=1 as ROOT node
+insert into st_category (pid, status, name, sn) values (null, 0, 'ROOT', '0');
