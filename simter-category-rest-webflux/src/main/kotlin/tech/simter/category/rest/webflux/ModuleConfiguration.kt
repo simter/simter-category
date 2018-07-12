@@ -37,7 +37,7 @@ class ModuleConfiguration @Autowired constructor(
   /** Register a `RouterFunction<ServerResponse>` with all routers for this module */
   @Bean("$MODULE.Routes")
   @ConditionalOnMissingBean(name = ["$MODULE.Routes"])
-  fun kvRoutes() = router {
+  fun categoryRoutes() = router {
     contextPath.nest {
       // GET /
       GET("/", { ok().contentType(TEXT_PLAIN).syncBody("simter-category module") })
