@@ -15,10 +15,10 @@ import javax.persistence.*
 data class Category(
   @javax.persistence.Id
   @org.springframework.data.annotation.Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
-  val id: Int,
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  val id: Int?,
   /** Parent Category ID */
-  @ManyToOne @JoinColumn(nullable = false) val pid: Category,
+  @ManyToOne(cascade = [(CascadeType.REMOVE)]) val pid: Category?,
   /** Status */
   @Convert(converter = CategoryStatusConverter::class) val status: Status,
   /** Name */
