@@ -18,7 +18,7 @@ data class Category(
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   val id: Int?,
   /** Parent Category ID */
-  @ManyToOne(cascade = [(CascadeType.REMOVE)]) val pid: Category?,
+  @ManyToOne(cascade = [(CascadeType.REMOVE)]) @JoinColumn(name = "PID") val pid: Category?,
   /** Status */
   @Convert(converter = CategoryStatusConverter::class) val status: Status,
   /** Name */
