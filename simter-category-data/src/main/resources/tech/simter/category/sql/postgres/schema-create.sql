@@ -16,6 +16,3 @@ comment on column st_category.pid is 'Parent Category ID';
 comment on column st_category.status is 'Status: 1-Draft, 2-Enabled, 4-Disabled, 8-Deleted';
 comment on column st_category.name is 'Name';
 comment on column st_category.sn is 'Code or order number';
-
--- Keep ID=1 as ROOT node
-insert into st_category (pid, status, name, sn) values (null, 0, 'ROOT', '0');

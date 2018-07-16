@@ -2,6 +2,5 @@
  * Data initialize script.
  * @author RJ
  */
--- Keep root node ID=1
-insert into st_category (id, pid, status, name, sn)
-values (1, null, 0, 'ROOT', '0');
+-- Keep ID=1 as ROOT node
+insert into st_category (pid, status, name, sn) values (null, 2, 'ROOT', '0');
