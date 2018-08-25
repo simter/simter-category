@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType.TEXT_PLAIN
-import org.springframework.web.reactive.config.EnableWebFlux
 import org.springframework.web.reactive.function.server.ServerResponse.ok
 import org.springframework.web.reactive.function.server.router
 
@@ -24,7 +23,6 @@ private const val MODULE = "tech.simter.category.rest.webflux"
  */
 @Configuration("$MODULE.ModuleConfiguration")
 @ComponentScan(MODULE)
-@EnableWebFlux
 class ModuleConfiguration @Autowired constructor(
   @Value("\${simter.rest.context-path.category:/}") private val contextPath: String
 ) {
