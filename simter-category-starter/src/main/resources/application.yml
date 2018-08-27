@@ -1,3 +1,4 @@
+module.version.simter-category: @project.version@
 db:
   platform: @db.platform@
   init-mode: @db.init-mode@

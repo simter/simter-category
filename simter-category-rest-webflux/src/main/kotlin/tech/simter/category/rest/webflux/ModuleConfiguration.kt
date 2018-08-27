@@ -24,12 +24,14 @@ private const val MODULE = "tech.simter.category.rest.webflux"
 @Configuration("$MODULE.ModuleConfiguration")
 @ComponentScan(MODULE)
 class ModuleConfiguration @Autowired constructor(
-  @Value("\${simter.rest.context-path.category:/}") private val contextPath: String
+  @Value("\${module.version.simter-category:UNKNOWN}") private val version: String,
+  @Value("\${module.rest-context-path.simter-category:/category}") private val contextPath: String
 ) {
   private val logger = LoggerFactory.getLogger(ModuleConfiguration::class.java)
 
   init {
-    logger.warn("simter.rest.context-path.category='{}'", contextPath)
+    logger.warn("module.version.simter-category='{}'", version)
+    logger.warn("module.rest-context-path.simter-category='{}'", contextPath)
   }
 
   /** Register a `RouterFunction<ServerResponse>` with all routers for this module */
@@ -38,7 +40,7 @@ class ModuleConfiguration @Autowired constructor(
   fun categoryRoutes() = router {
     contextPath.nest {
       // GET /
-      GET("/", { ok().contentType(TEXT_PLAIN).syncBody("simter-category module") })
+      GET("/", { ok().contentType(TEXT_PLAIN).syncBody("simter-category-$version") })
     }
   }
 }
