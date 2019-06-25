@@ -19,7 +19,7 @@
     <simter-category.version>${revision}</simter-category.version>
   </properties>
   <modules>
-    <module>simter-category-dependencies</module>
+    <module>simter-category-bom</module>
     <module>simter-category-parent</module>
     <module>simter-category-data</module>
     <module>simter-category-data-jpa</module>
