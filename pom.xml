@@ -5,7 +5,7 @@
   <parent>
     <groupId>tech.simter</groupId>
     <artifactId>simter-build</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0-M6</version>
     <!-- lookup parent from repository -->
     <relativePath/>
   </parent>
@@ -17,6 +17,7 @@
   <properties>
     <revision>0.6-SNAPSHOT</revision>
     <simter-category.version>${revision}</simter-category.version>
+    <simter-dependencies.version>1.2.0-M6</simter-dependencies.version>
   </properties>
   <modules>
     <module>simter-category-bom</module>
