@@ -7,9 +7,9 @@
     <version>${revision}</version>
     <relativePath>../simter-category-parent</relativePath>
   </parent>
-  <artifactId>simter-category-data</artifactId>
+  <artifactId>simter-category-core</artifactId>
   <packaging>jar</packaging>
-  <description>Data API</description>
+  <description>Core API</description>
   <developers>
     <developer>
       <name>RJ.Hwang</name>

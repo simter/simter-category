@@ -7,7 +7,7 @@
     <version>${revision}</version>
     <relativePath>../simter-category-parent</relativePath>
   </parent>
-  <artifactId>simter-category-data-jpa</artifactId>
+  <artifactId>simter-category-dao-jpa</artifactId>
   <packaging>jar</packaging>
   <description>Dao Implementation By JPA</description>
   <developers>
@@ -46,7 +46,7 @@
     </dependency>
     <dependency>
       <groupId>tech.simter.category</groupId>
-      <artifactId>simter-category-data</artifactId>
+      <artifactId>simter-category-core</artifactId>
     </dependency>
     <dependency>
       <groupId>tech.simter</groupId>

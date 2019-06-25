@@ -20,17 +20,17 @@
     <dependencies>
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-data</artifactId>
+        <artifactId>simter-category-core</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-data-reactive-mongo</artifactId>
+        <artifactId>simter-category-dao-mongo</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-data-jpa</artifactId>
+        <artifactId>simter-category-dao-jpa</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>

@@ -23,7 +23,7 @@
     </dependency>
     <dependency>
       <groupId>tech.simter.category</groupId>
-      <artifactId>simter-category-data</artifactId>
+      <artifactId>simter-category-core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>

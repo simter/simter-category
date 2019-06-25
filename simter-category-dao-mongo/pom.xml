@@ -7,7 +7,7 @@
     <version>${revision}</version>
     <relativePath>../simter-category-parent</relativePath>
   </parent>
-  <artifactId>simter-category-data-reactive-mongo</artifactId>
+  <artifactId>simter-category-dao-mongo</artifactId>
   <packaging>jar</packaging>
   <description>Dao Implementation By Reactive MongoDB</description>
   <developers>
@@ -19,7 +19,7 @@
   <dependencies>
     <dependency>
       <groupId>tech.simter.category</groupId>
-      <artifactId>simter-category-data</artifactId>
+      <artifactId>simter-category-core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.data</groupId>

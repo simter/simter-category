@@ -26,9 +26,9 @@
   <modules>
     <module>simter-category-bom</module>
     <module>simter-category-parent</module>
-    <module>simter-category-data</module>
-    <module>simter-category-data-jpa</module>
-    <module>simter-category-data-reactive-mongo</module>
+    <module>simter-category-core</module>
+    <module>simter-category-dao-jpa</module>
+    <module>simter-category-dao-mongo</module>
     <module>simter-category-rest-webflux</module>
     <module>simter-category-starter</module>
   </modules>
