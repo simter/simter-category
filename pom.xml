@@ -9,12 +9,13 @@
     <!-- lookup parent from repository -->
     <relativePath/>
   </parent>
-  <artifactId>simter-category-build</artifactId>
+  <groupId>tech.simter.category</groupId>
+  <artifactId>simter-category</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
   <description>Builder</description>
   <properties>
-    <revision>0.5-SNAPSHOT</revision>
+    <revision>0.6-SNAPSHOT</revision>
     <simter-category.version>${revision}</simter-category.version>
   </properties>
   <modules>

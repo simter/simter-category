@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>tech.simter</groupId>
-    <artifactId>simter-category-build</artifactId>
+    <groupId>tech.simter.category</groupId>
+    <artifactId>simter-category</artifactId>
     <version>${revision}</version>
     <relativePath>..</relativePath>
   </parent>
@@ -19,27 +19,27 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>tech.simter</groupId>
+        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-data</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
-        <groupId>tech.simter</groupId>
+        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-data-jpa</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
-        <groupId>tech.simter</groupId>
+        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-data-reactive-mongo</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
-        <groupId>tech.simter</groupId>
+        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-rest-webflux</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
-        <groupId>tech.simter</groupId>
+        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-starter</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
