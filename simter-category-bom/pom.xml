@@ -25,22 +25,17 @@
       </dependency>
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-data-jpa</artifactId>
-        <version>${simter-category.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-data-reactive-mongo</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-rest-webflux</artifactId>
+        <artifactId>simter-category-data-jpa</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-starter</artifactId>
+        <artifactId>simter-category-rest-webflux</artifactId>
         <version>${simter-category.version}</version>
       </dependency>
     </dependencies>
