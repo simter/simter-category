@@ -1,7 +1,3 @@
-/**
- * Create table script.
- * @author RJ
- */
 create table st_category (
   id     serial primary key,
   pid    int references st_category on delete cascade,
