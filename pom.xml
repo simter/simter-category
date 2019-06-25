@@ -10,7 +10,7 @@
     <relativePath/>
   </parent>
   <groupId>tech.simter.category</groupId>
-  <artifactId>simter-category-build</artifactId>
+  <artifactId>simter-category</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
   <description>Builder</description>
