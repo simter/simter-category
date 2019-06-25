@@ -7,9 +7,9 @@
     <version>${revision}</version>
     <relativePath>../simter-category-parent</relativePath>
   </parent>
-  <artifactId>simter-category-rest-webflux</artifactId>
+  <artifactId>simter-category-dao-mongo</artifactId>
   <packaging>jar</packaging>
-  <description>Rest API Implementation By WebFlux</description>
+  <description>Dao Implementation By Reactive MongoDB</description>
   <developers>
     <developer>
       <name>RJ.Hwang</name>
@@ -18,37 +18,23 @@
   </developers>
   <dependencies>
     <dependency>
-      <groupId>tech.simter.reactive</groupId>
-      <artifactId>simter-reactive-web</artifactId>
-    </dependency>
-    <dependency>
       <groupId>tech.simter.category</groupId>
       <artifactId>simter-category-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webflux</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-mongodb</artifactId>
     </dependency>
 
     <!-- test -->
     <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-kotlin</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- json jsr353 by jackson-->
-    <dependency>
-      <groupId>org.glassfish</groupId>
-      <artifactId>javax.json</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr353</artifactId>
+      <groupId>de.flapdoodle.embed</groupId>
+      <artifactId>de.flapdoodle.embed.mongo</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

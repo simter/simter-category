@@ -9,7 +9,6 @@ import org.springframework.web.reactive.config.CorsRegistry
 import org.springframework.web.reactive.config.DelegatingWebFluxConfiguration
 import org.springframework.web.reactive.config.EnableWebFlux
 import org.springframework.web.reactive.config.WebFluxConfigurer
-import org.springframework.web.reactive.function.server.ServerResponse.ok
 import org.springframework.web.reactive.function.server.router
 import java.time.OffsetDateTime
 
@@ -23,7 +22,8 @@ import java.time.OffsetDateTime
 @Configuration("tech.simter.category.starter.AppConfiguration")
 @EnableWebFlux
 class AppConfiguration @Autowired constructor(
-  @Value("\${module.version.simter-category:UNKNOWN}") private val version: String
+  @Value("\${module.version.simter:UNKNOWN}") private val simterVersion: String,
+  @Value("\${module.version.simter-category:UNKNOWN}") private val categoryVersion: String
 ) {
   /**
    * Register by method [DelegatingWebFluxConfiguration.setConfigurers].
@@ -56,7 +56,10 @@ class AppConfiguration @Autowired constructor(
   private val rootPage: String = """
     <h2>Simter Category Micro Service</h2>
     <div>Start at : $startTime</div>
-    <div>Version : $version</div>
+    <div>Version : $categoryVersion</div>
+    <ul>
+      <li>simter-$simterVersion</li>
+    </ul>
   """.trimIndent()
 
   /**
@@ -64,6 +67,12 @@ class AppConfiguration @Autowired constructor(
    */
   @Bean
   fun rootRoutes() = router {
-    "/".nest { GET("/", { ok().contentType(TEXT_HTML).syncBody(rootPage) }) }
+    "/".nest {
+      // root /
+      GET("/") { ok().contentType(TEXT_HTML).syncBody(rootPage) }
+
+      // OPTIONS /*
+      OPTIONS("/**") { noContent().build() }
+    }
   }
 }

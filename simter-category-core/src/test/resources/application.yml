@@ -1,0 +1,8 @@
+spring.main.banner-mode: 'off'
+module.authorization.simter-category:
+  defaultPermission: "Allow"   # Allow, Deny
+logging:
+  file: target/test.log
+  level: # TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF
+    root: ERROR
+    tech.simter.category: WARN
