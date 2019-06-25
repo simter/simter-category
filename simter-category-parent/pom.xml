@@ -21,7 +21,7 @@
       <!-- simter-category -->
       <dependency>
         <groupId>tech.simter.category</groupId>
-        <artifactId>simter-category-dependencies</artifactId>
+        <artifactId>simter-category-bom</artifactId>
         <version>${simter-category.version}</version>
         <type>pom</type>
         <scope>import</scope>
