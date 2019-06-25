@@ -8,10 +8,8 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType.TEXT_PLAIN
-import org.springframework.web.reactive.function.server.ServerResponse.ok
 import org.springframework.web.reactive.function.server.router
-
-private const val MODULE = "tech.simter.category.rest.webflux"
+import tech.simter.category.PACKAGE
 
 /**
  * All configuration for this module.
@@ -21,8 +19,8 @@ private const val MODULE = "tech.simter.category.rest.webflux"
  *
  * @author RJ
  */
-@Configuration("$MODULE.ModuleConfiguration")
-@ComponentScan(MODULE)
+@Configuration("$PACKAGE.rest.webflux.ModuleConfiguration")
+@ComponentScan
 class ModuleConfiguration @Autowired constructor(
   @Value("\${module.version.simter-category:UNKNOWN}") private val version: String,
   @Value("\${module.rest-context-path.simter-category:/category}") private val contextPath: String
@@ -35,12 +33,12 @@ class ModuleConfiguration @Autowired constructor(
   }
 
   /** Register a `RouterFunction<ServerResponse>` with all routers for this module */
-  @Bean("$MODULE.Routes")
-  @ConditionalOnMissingBean(name = ["$MODULE.Routes"])
+  @Bean("$PACKAGE.rest.webflux.Routes")
+  @ConditionalOnMissingBean(name = ["$PACKAGE.rest.webflux.Routes"])
   fun categoryRoutes() = router {
     contextPath.nest {
       // GET /
-      GET("/", { ok().contentType(TEXT_PLAIN).syncBody("simter-category-$version") })
+      GET("/") { ok().contentType(TEXT_PLAIN).syncBody("simter-category-rest-webflux-$version") }
     }
   }
 }

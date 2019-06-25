@@ -300,7 +300,7 @@
     <profile>
       <id>jpa-hibernate-embedded-h2</id>
       <activation>
-        <activeByDefault>false</activeByDefault>
+        <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
         <db.jpa-implementation>hibernate</db.jpa-implementation>
@@ -394,7 +394,7 @@
     <profile>
       <id>jpa-hibernate-postgres</id>
       <activation>
-        <activeByDefault>true</activeByDefault>
+        <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
         <db.jpa-implementation>hibernate</db.jpa-implementation>
