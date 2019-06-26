@@ -1,37 +1,33 @@
-# Simter Category Modules
+# simter-category
 
-## Requirement
-
-- Maven 3.5.2+
-- Kotlin 1.2.31+
-- Java 8+
-- Spring Framework 5+
-- Spring Boot 2+
-- Reactor 3+
+A Category Manager.
 
 ## Maven Modules
 
-Sn | Name                                  | Parent                       | Remark
----|---------------------------------------|------------------------------|--------
-1  | [simter-category-build]               | [simter-build:0.5.0]         | Build modules and define global properties and pluginManagement
-2  | [simter-category-dependencies]        | simter-category-build        | Define global dependencyManagement
-3  | [simter-category-parent]              | simter-category-dependencies | All sub modules parent module, Define global dependencies and plugins
-4  | [simter-category-data]                | simter-category-parent       | Define Service and Dao Interfaces
-5  | [simter-category-data-reactive-mongo] | simter-category-parent       | Dao Implementation By Reactive MongoDB
-6  | [simter-category-data-jpa]            | simter-category-parent       | Dao Implementation By JPA
-7  | [simter-category-rest-webflux]        | simter-category-parent       | Rest API By WebFlux
-8  | [simter-category-starter]             | simter-category-parent       | Microservice Starter
+| Sn | Name                         | Type | Parent                 | Remark
+|----|------------------------------|------|------------------------|--------
+| 1  | [simter-category]            | pom  | [simter-build]         | Build these modules and define global properties and pluginManagement
+| 2  | simter-category-bom          | pom  | simter-category        | Bom
+| 3  | simter-category-parent       | pom  | simter-category        | Define global dependencies and plugins
+| 4  | simter-category-core         | jar  | simter-category-parent | Core API: [Category], [CategoryDao] and [CategoryService]
+| 5  | simter-category-dao-mongo    | jar  | simter-category-parent | [CategoryDao] Implementation By Reactive MongoDB
+| 6  | simter-category-dao-r2dbc    | jar  | simter-category-parent | [CategoryDao] Implementation By R2DBC
+| 7  | simter-category-dao-jpa      | jar  | simter-category-parent | [CategoryDao] Implementation By JPA
+| 8  | simter-category-rest-webflux | jar  | simter-category-parent | [Rest API] Implementation By WebFlux
+| 9  | simter-category-starter      | jar  | simter-category-parent | Microservice Starter
 
+## Requirement
 
-Remark : Module 1, 2, 3 all has maven-enforcer-plugin and flatten-maven-plugin config. Other modules must not configure them.
+- Maven 3.6+
+- Kotlin 1.3+
+- Java 8+
+- Spring Framework 5.1+
+- Spring Boot 2.1+
+- Reactor 3.2+
 
-
-[simter-build:0.5.0]: https://github.com/simter/simter-build/tree/0.5.0
-[simter-category-build]: https://github.com/simter/simter-category
-[simter-category-dependencies]: https://github.com/simter/simter-category/tree/master/simter-category-dependencies
-[simter-category-parent]: https://github.com/simter/simter-category/tree/master/simter-category-parent
-[simter-category-data]: https://github.com/simter/simter-category/tree/master/simter-category-data
-[simter-category-data-jpa]: https://github.com/simter/simter-category/tree/master/simter-category-data-jpa
-[simter-category-data-reactive-mongo]: https://github.com/simter/simter-category/tree/master/simter-category-data-reactive-mongo
-[simter-category-rest-webflux]: https://github.com/simter/simter-category/tree/master/simter-category-rest-webflux
-[simter-category-starter]: https://github.com/simter/simter-category/tree/master/simter-category-starter
+[simter-build]: https://github.com/simter/simter-build
+[simter-category]: https://github.com/simter/simter-category
+[Category]: https://github.com/simter/simter-category/blob/master/simter-category-core/src/main/kotlin/tech/simter/category/core/Category.kt
+[CategoryDao]: https://github.com/simter/simter-category/blob/master/simter-category-core/src/main/kotlin/tech/simter/category/core/CategoryDao.kt
+[CategoryService]: https://github.com/simter/simter-category/blob/master/simter-category-core/src/main/kotlin/tech/simter/category/core/CategoryService.kt
+[Rest API]: ./docs/rest-api.md
