@@ -1,5 +1,16 @@
 # simter-category changelog
 
+## 0.6.0 2019-06-26
+
+- Refactor module structure to make core api simplify and clear [#7](https://github.com/simter/simter-category/issues/7)
+- Rename groupId tech.simter to tech.simter.category [#2](https://github.com/simter/simter-category/issues/2)
+- Rename simter-category-build to simter-category [#2](https://github.com/simter/simter-category/issues/2)
+- Support static file on starter [#4](https://github.com/simter/simter-category/issues/4)
+- Rename simter-category-dependencies to simter-category-bom [#3](https://github.com/simter/simter-category/issues/3)
+- Move block jpa implementation to thread pool [#6](https://github.com/simter/simter-category/issues/6)
+- Add H2 SQL
+- Upgrade to simter-1.2.0-M6
+
 ## 0.5.0 2019-01-14
 
 - Upgrade to simter-build-1.1.0 and simter-dependencies-1.1.0
