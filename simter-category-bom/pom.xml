@@ -24,6 +24,11 @@
       </dependency>
       <dependency>
         <groupId>tech.simter.category</groupId>
+        <artifactId>simter-category-service-impl</artifactId>
+        <version>${simter-category.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>tech.simter.category</groupId>
         <artifactId>simter-category-dao-mongo</artifactId>
         <version>${simter-category.version}</version>
       </dependency>

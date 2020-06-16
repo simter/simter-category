@@ -22,6 +22,7 @@
     <module>simter-category-parent</module>
     <module>simter-category-core</module>
     <module>simter-category-test</module>
+    <module>simter-category-service-impl</module>
     <module>simter-category-dao-jpa</module>
     <module>simter-category-dao-mongo</module>
     <module>simter-category-rest-webflux</module>
