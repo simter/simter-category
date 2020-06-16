@@ -1,5 +1,10 @@
 # Rest API for simter-category
 
-The following `{context-path}` could be configured by property `module.rest-context-path.simter-category`. Its default value is `/category`.
+Provide rest APIs:
+
+| Sn | Method | Url                  | Description
+|----|--------|----------------------|-------------
+
+The `{context-path}` could be configured by property `simter-category.rest-context-path`. Its default value is `/category`.
 
 TODO

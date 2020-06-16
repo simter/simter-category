@@ -15,21 +15,21 @@ import tech.simter.category.PACKAGE
  * All configuration for this module.
  *
  * Register a `RouterFunction<ServerResponse>` with all routers for this module.
- * The default context-path of this router is '/'. And can be config by property `simter.rest.context-path.category`.
+ * The default context-path of this router is '/category'. And can be config by property `simter-category.rest-context-path`.
  *
  * @author RJ
  */
 @Configuration("$PACKAGE.rest.webflux.ModuleConfiguration")
 @ComponentScan
 class ModuleConfiguration @Autowired constructor(
-  @Value("\${module.version.simter-category:UNKNOWN}") private val version: String,
-  @Value("\${module.rest-context-path.simter-category:/category}") private val contextPath: String
+  @Value("\${simter-category.rest-context-path:/category}") private val contextPath: String,
+  @Value("\${simter-category.version:UNKNOWN}") private val version: String
 ) {
   private val logger = LoggerFactory.getLogger(ModuleConfiguration::class.java)
 
   init {
-    logger.warn("module.version.simter-category='{}'", version)
-    logger.warn("module.rest-context-path.simter-category='{}'", contextPath)
+    logger.warn("simter-category.rest-context-path='{}'", contextPath)
+    logger.warn("simter-category.version='{}'", version)
   }
 
   /** Register a `RouterFunction<ServerResponse>` with all routers for this module */
@@ -38,7 +38,7 @@ class ModuleConfiguration @Autowired constructor(
   fun categoryRoutes() = router {
     contextPath.nest {
       // GET /
-      GET("/") { ok().contentType(TEXT_PLAIN).syncBody("simter-category-rest-webflux-$version") }
+      GET("/") { ok().contentType(TEXT_PLAIN).bodyValue("simter-category-rest-webflux-$version") }
     }
   }
 }

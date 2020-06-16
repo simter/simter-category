@@ -1,5 +1,11 @@
 # simter-category changelog
 
+## 0.7.0 2020-06-16
+
+- Add a new module simter-category-test
+- Add a new module simter-category-service-impl
+- Upgrade to simter-2.0.0-M1
+
 ## 0.6.0 2019-06-26
 
 - Refactor module structure to make core api simplify and clear [#7](https://github.com/simter/simter-category/issues/7)
