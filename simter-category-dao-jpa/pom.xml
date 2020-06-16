@@ -55,6 +55,11 @@
       <artifactId>simter-reactive-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>tech.simter.category</groupId>
+      <artifactId>simter-category-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

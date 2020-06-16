@@ -38,7 +38,7 @@ class ModuleConfiguration @Autowired constructor(
   fun categoryRoutes() = router {
     contextPath.nest {
       // GET /
-      GET("/") { ok().contentType(TEXT_PLAIN).syncBody("simter-category-rest-webflux-$version") }
+      GET("/") { ok().contentType(TEXT_PLAIN).bodyValue("simter-category-rest-webflux-$version") }
     }
   }
 }

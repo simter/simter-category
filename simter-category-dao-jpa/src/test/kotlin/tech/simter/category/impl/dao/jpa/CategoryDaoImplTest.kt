@@ -6,7 +6,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 import reactor.kotlin.test.test
 import tech.simter.category.core.Category.Status.*
 import tech.simter.category.core.CategoryDao
-import tech.simter.category.impl.dao.jpa.po.CategoryPo
+import tech.simter.category.impl.dao.jpa.TestHelper.randomCategoryPo
 import tech.simter.reactive.test.jpa.ReactiveDataJpaTest
 import tech.simter.reactive.test.jpa.TestEntityManager
 
@@ -22,16 +22,16 @@ class CategoryDaoImplTest @Autowired constructor(
   @Test
   fun findChild() {
     // mock
-    val primary = CategoryPo(null, null, Enabled, "primary", "0")
-    val parent1 = CategoryPo(null, primary, Enabled, "parent1", "1")
-    val p1Child1 = CategoryPo(null, parent1, Enabled, "p1-child1", "1")
-    val p1Child2 = CategoryPo(null, parent1, Disabled, "p1-child2", "2")
-    val parent2 = CategoryPo(null, primary, Enabled, "parent2", "2")
-    val p2Child1 = CategoryPo(null, parent2, Enabled, "p2-child1", "1")
-    val p2Child2 = CategoryPo(null, parent2, Enabled, "p2-child2", "2")
+    val primary = randomCategoryPo(status = Enabled, name = "primary", sn = "0")
+    val parent1 = randomCategoryPo(parent = primary, status = Enabled, name = "parent1", sn = "1")
+    val p1Child1 = randomCategoryPo(parent = parent1, status = Enabled, name = "p1-child1", sn = "1")
+    val p1Child2 = randomCategoryPo(parent = parent1, status = Disabled, name = "p1-child2", sn = "2")
+    val parent2 = randomCategoryPo(parent = primary, status = Enabled, name = "parent2", sn = "2")
+    val p2Child1 = randomCategoryPo(parent = parent2, status = Enabled, name = "p2-child1", sn = "1")
+    val p2Child2 = randomCategoryPo(parent = parent2, status = Enabled, name = "p2-child2", sn = "2")
     rem.persist(
       primary, parent2, p2Child2, p2Child1, parent1, p1Child2, p1Child1,
-      CategoryPo(null, parent2, Draft, "p2-child3", "3")
+      randomCategoryPo(parent = parent2, status = Draft, name = "p2-child3", sn = "3")
     )
 
     // invoke and verify

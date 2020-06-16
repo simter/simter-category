@@ -18,13 +18,25 @@ data class CategoryPo(
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   override val id: Int?,
-  @ManyToOne(cascade = [REMOVE])
+  @ManyToOne(cascade = [REMOVE], targetEntity = CategoryPo::class)
   @JoinColumn(name = "PID")
-  override val pid: CategoryPo?,
+  override val pid: Category?,
   @Convert(converter = CategoryStatusConverter::class)
   override val status: Status,
   @Column(nullable = false, length = 100)
   override val name: String,
   @Column(nullable = false, length = 50)
   override val sn: String
-) : Category
+) : Category {
+  companion object {
+    fun from(category: Category): CategoryPo {
+      return if (category is CategoryPo) category else CategoryPo(
+        id = category.id,
+        pid = category.pid,
+        status = category.status,
+        name = category.name,
+        sn = category.sn
+      )
+    }
+  }
+}
