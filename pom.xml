@@ -4,9 +4,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>tech.simter</groupId>
-    <artifactId>simter-build</artifactId>
-    <version>1.2.0-M6</version>
-    <!-- lookup parent from repository -->
+    <artifactId>simter-dependencies</artifactId>
+    <version>2.0.0-M1</version>
     <relativePath/>
   </parent>
   <groupId>tech.simter.category</groupId>
@@ -17,11 +16,6 @@
   <properties>
     <revision>0.7-SNAPSHOT</revision>
     <simter-category.version>${revision}</simter-category.version>
-    <simter-dependencies.version>1.2.0-M6</simter-dependencies.version>
-    <spring.version>${spring.milestone.version}</spring.version>
-    <spring-boot.version>${spring-boot.milestone.version}</spring-boot.version>
-    <reactor.version>${reactor.milestone.version}</reactor.version>
-    <reactor-kotlin-extensions.version>1.0.0.M1</reactor-kotlin-extensions.version>
   </properties>
   <modules>
     <module>simter-category-bom</module>
@@ -41,27 +35,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
-        <inherited>true</inherited>
-        <executions>
-          <execution>
-            <id>flatten</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>flatten</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}</outputDirectory>
-              <flattenedPomFilename>flattened-pom.xml</flattenedPomFilename>
-              <updatePomFile>true</updatePomFile>
-              <flattenMode>oss</flattenMode>
-              <pomElements>
-                <parent>resolve</parent>
-                <modules>remove</modules>
-                <properties>interpolate</properties>
-              </pomElements>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
@@ -74,6 +47,8 @@
     </license>
   </licenses>
   <scm>
+    <connection>scm:git:git://github.com/simter/simter-category.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/simter/simter-category.git</developerConnection>
     <url>https://github.com/simter/simter-category.git</url>
   </scm>
   <organization>

@@ -1,14 +1,5 @@
 #  Simter Category Server
 
-## Requirement
-
-- Maven 3.6+
-- Kotlin 1.3+
-- Java 8+
-- Spring Framework 5.1+
-- Spring Boot 2.1+
-- Reactor 3.2+
-
 ## Supported Rest API
 
 See [rest-api.md](../docs/rest-api.md).
@@ -74,11 +65,4 @@ Run test in the real server.
 2. Run [IntegrationTest.kt]
 
 
-[Embedded MongoDB]: https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo#embedded-mongodb
-[MongoDB]: https://www.mongodb.com
-[HyperSQL]: http://hsqldb.org
-[PostgreSQL]: https://www.postgresql.org
-[Embedded PostgreSQL]: https://github.com/yandex-qatools/postgresql-embedded
-[MySQL]: https://www.mysql.com
-[Embedded MySQL]: https://github.com/wix/wix-embedded-mysql
 [IntegrationTest.kt]: https://github.com/simter/simter-category/blob/master/simter-category-starter/src/test/kotlin/tech/simter/category/starter/IntegrationTest.kt
