@@ -1,5 +1,10 @@
 # simter-category changelog
 
+## 1.0.0 2020-11-24
+
+- Upgrade to simter-2.0.0
+- First stable version
+
 ## 0.7.0 2020-06-16
 
 - Add a new module simter-category-test
