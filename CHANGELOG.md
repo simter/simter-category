@@ -1,5 +1,11 @@
 # simter-category changelog
 
+## 2.0.0 - 2022-06-24
+
+- Upgrade to simter-3.0.0 (spring-boot-2.7.0 and Java-17)
+- Upgrade embedded mongo config for spring-boot-2.7
+- Upgrade dao-jpa config for spring-boot-2.7
+
 ## 2.0.0-M1 - 2020-12-28
 
 - Upgrade to simter-3.0.0-M1 (spring-boot-2.4.1)
